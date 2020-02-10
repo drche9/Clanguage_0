@@ -27,9 +27,9 @@ int main() {
 	printf("31를 외치는 사람이 패배, 31을 외치지 않는 사람이 승리한다. \n");
 	printf("start! \n");
 	printf("플레이어 : ");
-	scanf_s("%d \n", &player);
-	printf("컴퓨터 : ");
-	scanf_s("%d \n", &computer);
+	scanf_s("%d", &player);
+	printf("\n컴퓨터 : ");
+	scanf_s("%d", &computer);
 	
 	
 	
