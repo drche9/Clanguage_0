@@ -28,14 +28,13 @@ int main() {
 	//반복(31까지)
 	while (total < 31)
 	{
-
 		//플레이어의 입력
 		//player의 값이  total값보다 적으면 실행 X
 		do {
 			printf("player : ");
 			scanf_s("%d", &player);
 		}
-		while (player < total);
+		while (player <= total);
 
 		/*while (total > player){
 			printf("player : ");
@@ -49,10 +48,13 @@ int main() {
 
 		//컴퓨터의 입력
 		srand(time(NULL));
+		
 		if (player < 31) {
-			computer = (rand() % 3) + 1;
-			if (player+computer > 31) {
-				computer = 31 - player;
+			if (computer!=player) {
+				computer = (rand() % 3) + 1;
+				if (player + computer > 31) {
+					computer = 31 - player;
+				}
 			}
 		}
 		else {
@@ -62,15 +64,16 @@ int main() {
 		printf("computer : %d \n \n", total);
 	}
 	if (player == 31) {
-		printf("your Defeat \n");
+		printf("\nyour Defeat \n");
 	}
 	else {
-		printf("your win \n");
+		printf("\nyour win \n\n");
 	}
 	printf("GameOver");
 	//31에 다다르면 게임 오버
 	
-	//+컴퓨터와 같은 값을 입력해도 컴퓨터가 ++
+	//컴퓨터와 같은 값을 입력해도 컴퓨터가 ++
+	//컴퓨터의 선일지 플레이어가 선일지 선택
 	
 	return 0;
 }
