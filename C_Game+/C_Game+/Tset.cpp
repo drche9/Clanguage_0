@@ -1,4 +1,4 @@
-#include<stdio.h>
+ï»¿#include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 int main() {
@@ -17,60 +17,32 @@ int main() {
 	printf("\n");
 	int player = 0;
 	int computer = 0;
+	int exit0 = 0;
 	int total = 0;
-	//ÇÃ·¹ÀÌ¾î¿¡°Ô °ÔÀÓ ¼³¸í
-	printf("°ÔÀÓ ¼³¸í \n \n");
-	printf("player¿Í computer´Â ¼­·Î ¼ýÀÚ¸¦ ÁÖ°í ¹Þ´Â´Ù. \n");
-	printf("playerÀÇ ¼± °ø°Ý! 1~ 3ÀÇ °ªÀ» ÀÔ·ÂÇÑ´Ù \n");
-	printf("ÄÄÇ»ÅÍ´Â ÇÃ·¹ÀÌ¾î¸¦ ¸¶Áö¸· °ªÀ» ÀÌ¾î¼­ ·£´ýÀ¸·Î Ãâ·ÂÇÑ´Ù. \n");
-	printf("31¸¦ ¿ÜÄ¡´Â »ç¶÷ÀÌ ÆÐ¹è, 31À» ¿ÜÄ¡Áö ¾Ê´Â »ç¶÷ÀÌ ½Â¸®ÇÑ´Ù. \n");
+	//ï¿½Ã·ï¿½ï¿½Ì¾î¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ \n \n");
+	printf("playerï¿½ï¿½ computerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ö°ï¿½ ï¿½Þ´Â´ï¿½. \n");
+	printf("playerï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½! 1~ 3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ñ´ï¿½ \n");
+	printf("ï¿½ï¿½Ç»ï¿½Í´ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¾î¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. \n");
+	printf("31ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¹ï¿½, 31ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â¸ï¿½ï¿½Ñ´ï¿½. \n");
 	printf("start! \n");
-	//¹Ýº¹(31±îÁö)
+	//ï¿½Ýºï¿½(31ï¿½ï¿½ï¿½ï¿½)
 	while (total < 31)
 	{
-
-		//ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·Â
-		//playerÀÇ °ªÀÌ  total°ªº¸´Ù ÀûÀ¸¸é ½ÇÇà X
-		do {
-			printf("player : ");
-			scanf_s("%d", &player);
-		}
-		while (player < total);
-
-		/*while (total > player){
-			printf("player : ");
-			scanf_s("%d", &player);
-		}*/
-		
-		//ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·Â
-
-		//printf("player : ");
-		//scanf_s("%d", &player);
-
-		//ÄÄÇ»ÅÍÀÇ ÀÔ·Â
+		//ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
+		printf("player : ");
+		scanf_s("%d", &player);
+		//ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 		srand(time(NULL));
 		if (player < 31) {
 			computer = (rand() % 3) + 1;
-			if (player+computer > 31) {
-				computer = 31 - player;
-			}
-		}
-		else {
-			break;
 		}
 		total = computer + player;
 		printf("computer : %d \n \n", total);
 	}
-	if (player == 31) {
-		printf("your Defeat \n");
-	}
-	else {
-		printf("your win \n");
-	}
 	printf("GameOver");
-	//31¿¡ ´Ù´Ù¸£¸é °ÔÀÓ ¿À¹ö
-	
-	//+ÄÄÇ»ÅÍ¿Í °°Àº °ªÀ» ÀÔ·ÂÇØµµ ÄÄÇ»ÅÍ°¡ ++
-	
+	//31ï¿½ï¿½ ï¿½Ù´Ù¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+
 	return 0;
 }
